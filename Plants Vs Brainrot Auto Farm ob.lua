@@ -1,8 +1,3 @@
---// SCRIPT COMPLETELY OVERHAULED
---// Anti-AFK system has been upgraded to simulate human-like behavior.
---// Auto-Sell is now functional with the new ItemSell remote.
---// Auto-Buy and Auto-Claim have been verified and are working correctly.
-
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local UserInputService = game:GetService("UserInputService")
@@ -844,4 +839,4 @@ function AntiAFKSystem:SimulateHumanActivity()
 end
 
 AutoManager:InitializeHub()
-AntiAFKSystem:SimulateHumanActivity() --// Start the new anti-AFK loop
+AntiAFKSystem:SimulateHumanActivity() 
